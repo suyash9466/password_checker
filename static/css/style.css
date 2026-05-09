@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #0e0e12;
+  --surface: #17171f;
+  --border: #2a2a38;
+  --text: #e8e8f0;
+  --muted: #7a7a96;
+  --accent: #6c63ff;
+  --red: #ff4d4d;
+  --orange: #ff8c42;
+  --yellow: #f5c518;
+  --lightgreen: #62d87a;
+  --green: #22c55e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.session-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.6rem;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: var(--bg);
+  transition: border-color 0.2s;
+}
+
+.input-wrap:focus-within {
+  border-color: var(--accent);
+}
+
+#password-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: var(--text);
+  padding: 13px 0;
+  letter-spacing: 1px;
+}
+
+#toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+#toggle-btn:hover { opacity: 1; }
+
+.bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+  background: var(--accent);
+}
+
+.strength-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: right;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+
+.stats-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.2rem;
+}
+
+.stat-pill {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.stat-desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2px;
+  display: block;
+}
+
+.checklist {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.check-item.pass { color: var(--lightgreen); }
+
+.check-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  transition: all 0.25s;
+}
+
+.check-item.pass .check-icon {
+  background: var(--lightgreen);
+  border-color: var(--lightgreen);
+  color: #000;
+}
+
+.tips-box {
+  margin-top: 1.4rem;
+  padding: 12px 14px;
+  background: rgba(255, 77, 77, 0.07);
+  border: 1px solid rgba(255, 77, 77, 0.2);
+  border-radius: 8px;
+}
+
+.tips-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#tips-list li {
+  font-size: 0.82rem;
+  color: #ffaaaa;
+  padding-left: 14px;
+  position: relative;
+}
+
+#tips-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+}
